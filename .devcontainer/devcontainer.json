@@ -1,0 +1,15 @@
+{
+  "name": "bazel-simple-cpp (Ubuntu, GCC)",
+  "build": {
+    "dockerfile": "Dockerfile"
+  },
+  "remoteUser": "ubuntu",
+  "containerEnv": {
+    "CC": "gcc",
+    "CXX": "g++"
+  },
+  "mounts": [
+    "source=bazel-simple-cpp-cache,target=/home/ubuntu/.cache,type=volume"
+  ],
+  "postCreateCommand": "bazel version"
+}
